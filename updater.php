@@ -1,5 +1,5 @@
 <?php
-class PFEM_Updater {
+class EM_Updater {
 	protected $file;
 	protected $plugin;
 	protected $basename;

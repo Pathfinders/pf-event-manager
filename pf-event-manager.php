@@ -39,7 +39,7 @@ function showAdminMessages(){
 
 /* Include our updater file */
 include_once(plugin_dir_path(__FILE__).'updater.php');
-$updater = new PFEM_Updater(__FILE__); // instantiate our class
+$updater = new EM_Updater(__FILE__); // instantiate our class
 $updater->set_username('Pathfinders'); // set username
 $updater->set_repository('pf-event-manager' ); // set repo
 $updater->initialize(); // initialize the updater
