@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: PF Event Manager
-Version: 0.1.0
+Version: 1.0.0
 Author: Pathfinders Advertising
 Description: You know... event... stuff
 Author URI: http://www.pathfind.com
@@ -37,21 +37,9 @@ function showAdminMessages(){
 	}
 }
 
-/*  */
-class PFEM_Updater {
-	protected $file;
-	protected $plugin;
-	protected $basename;
-	protected $active;
-	public function __construct($file){
-		$this->file = $file;
-		add_action('admin_init',array($this,'set_plugin_properties'));
-		return $this;
-	}
-	public function set_plugin_properties() {
-		$this->plugin = get_plugin_data($this->file);
-		$this->basename = plugin_basename($this->file);
-		$this->active = is_plugin_active($this->basename);
-	}
-}
-?>
+/* Include our updater file */
+include_once(plugin_dir_path(__FILE__).'updater.php');
+$updater = new PFEM_Updater(__FILE__); // instantiate our class
+$updater->set_username('Pathfinders'); // set username
+$updater->set_repository('pf-event-manager' ); // set repo
+$updater->initialize(); // initialize the updater
