@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: PF Event Manager
-Version: 1.0.2
+Version: 1.0.4
 Author: Pathfinders Advertising
 Description: You know... event... stuff
 Author URI: http://www.pathfind.com
